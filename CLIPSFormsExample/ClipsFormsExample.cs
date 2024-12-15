@@ -126,7 +126,21 @@ namespace ClipsFormsExample
         {
             foreach (var line in outputBox.Lines)
             {
-                clips.Eval($"(assert (input-question (name \"{line}\")))");
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
+                if (line.StartsWith("Новая итерация :"))
+                    continue;
+                if (line.Contains("->"))
+                    continue;
+
+                string[] parts = line.Split();
+                var name = string.Join(" ", parts, 0, parts.Length - 1);
+
+                // Parse the last part into var2 as a float
+                var coef = line.Split().Last();
+                Console.WriteLine(name + "-" + coef);
+                var str = $"(assert (input-question (name \"{name}\") (confidence {coef})))";
+                clips.Eval(str);
             }
             clips.Run();
             HandleResponse();
