@@ -41,8 +41,9 @@ for i, line in enumerate(io.open("games-knowledge-base\\rules.md", "r").readline
         s += f" ?c{c}"
         c+=1
     s+=f"))"
+
     s+=f"\n(bind ?newConf (* ?minConf ?*confidence-rule{i}*))"
-    s += f"\n(assert (fact (name \"{facts[to_fact.strip()]}\")))"
+    s += f"\n(assert (fact (name \"{facts[to_fact.strip()]}\") (confidence ?newConf)))"
     s += f"\n(assert (sendmessage \"{str.join(", ", [facts[ind.strip()] for ind in from_facts])} -> {facts[to_fact]}\" ?newConf)))"
     out.write(s)
 

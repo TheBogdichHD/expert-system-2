@@ -296,7 +296,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule3*))
-(assert (fact (name "3D")))
+(assert (fact (name "3D") (confidence ?newConf)))
 (assert (sendmessage "Шутер -> 3D" ?newConf)))
 (defrule rule5
 (fact (name "Платформер") (confidence ?c1))
@@ -304,7 +304,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule5*))
-(assert (fact (name "2D")))
+(assert (fact (name "2D") (confidence ?newConf)))
 (assert (sendmessage "Платформер -> 2D" ?newConf)))
 (defrule rule7
 (fact (name "Шутер") (confidence ?c1))
@@ -313,7 +313,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule7*))
-(assert (fact (name "Классовый шутер")))
+(assert (fact (name "Классовый шутер") (confidence ?newConf)))
 (assert (sendmessage "Шутер, Стратегия -> Классовый шутер" ?newConf)))
 (defrule rule9
 (fact (name "Рыбалка") (confidence ?c1))
@@ -321,7 +321,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule9*))
-(assert (fact (name "Управление ресурсами")))
+(assert (fact (name "Управление ресурсами") (confidence ?newConf)))
 (assert (sendmessage "Рыбалка -> Управление ресурсами" ?newConf)))
 (defrule rule11
 (fact (name "Пиксельная графика") (confidence ?c1))
@@ -329,7 +329,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule11*))
-(assert (fact (name "2D")))
+(assert (fact (name "2D") (confidence ?newConf)))
 (assert (sendmessage "Пиксельная графика -> 2D" ?newConf)))
 (defrule rule13
 (fact (name "2D") (confidence ?c1))
@@ -337,7 +337,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule13*))
-(assert (fact (name "Вид сбоку")))
+(assert (fact (name "Вид сбоку") (confidence ?newConf)))
 (assert (sendmessage "2D -> Вид сбоку" ?newConf)))
 (defrule rule15
 (fact (name "2D") (confidence ?c1))
@@ -345,7 +345,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule15*))
-(assert (fact (name "Вид сверху")))
+(assert (fact (name "Вид сверху") (confidence ?newConf)))
 (assert (sendmessage "2D -> Вид сверху" ?newConf)))
 (defrule rule17
 (fact (name "Шутер") (confidence ?c1))
@@ -353,7 +353,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule17*))
-(assert (fact (name "Разрушаемость")))
+(assert (fact (name "Разрушаемость") (confidence ?newConf)))
 (assert (sendmessage "Шутер -> Разрушаемость" ?newConf)))
 (defrule rule19
 (fact (name "Старая") (confidence ?c1))
@@ -361,7 +361,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule19*))
-(assert (fact (name "Классика")))
+(assert (fact (name "Классика") (confidence ?newConf)))
 (assert (sendmessage "Старая -> Классика" ?newConf)))
 (defrule rule21
 (fact (name "Вид от 1-го лица") (confidence ?c1))
@@ -369,7 +369,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule21*))
-(assert (fact (name "3D")))
+(assert (fact (name "3D") (confidence ?newConf)))
 (assert (sendmessage "Вид от 1-го лица -> 3D" ?newConf)))
 (defrule rule23
 (fact (name "Вид от 3-го лица") (confidence ?c1))
@@ -377,7 +377,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule23*))
-(assert (fact (name "3D")))
+(assert (fact (name "3D") (confidence ?newConf)))
 (assert (sendmessage "Вид от 3-го лица -> 3D" ?newConf)))
 (defrule rule25
 (fact (name "Triple A") (confidence ?c1))
@@ -386,7 +386,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule25*))
-(assert (fact (name "Плохая")))
+(assert (fact (name "Плохая") (confidence ?newConf)))
 (assert (sendmessage "Triple A, Новая -> Плохая" ?newConf)))
 (defrule rule27
 (fact (name "Ужасы") (confidence ?c1))
@@ -395,7 +395,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule27*))
-(assert (fact (name "Хоррор на выживание")))
+(assert (fact (name "Хоррор на выживание") (confidence ?newConf)))
 (assert (sendmessage "Ужасы, Выживание -> Хоррор на выживание" ?newConf)))
 (defrule rule29
 (fact (name "Кооператив") (confidence ?c1))
@@ -403,7 +403,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule29*))
-(assert (fact (name "Онлайн")))
+(assert (fact (name "Онлайн") (confidence ?newConf)))
 (assert (sendmessage "Кооператив -> Онлайн" ?newConf)))
 (defrule rule31
 (fact (name "Соревновательный") (confidence ?c1))
@@ -411,7 +411,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule31*))
-(assert (fact (name "Сложная")))
+(assert (fact (name "Сложная") (confidence ?newConf)))
 (assert (sendmessage "Соревновательный -> Сложная" ?newConf)))
 (defrule rule33
 (fact (name "Экшен-RPG") (confidence ?c1))
@@ -419,7 +419,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule33*))
-(assert (fact (name "3D")))
+(assert (fact (name "3D") (confidence ?newConf)))
 (assert (sendmessage "Экшен-RPG -> 3D" ?newConf)))
 (defrule rule35
 (fact (name "Рогалик") (confidence ?c1))
@@ -427,7 +427,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule35*))
-(assert (fact (name "Сложная")))
+(assert (fact (name "Сложная") (confidence ?newConf)))
 (assert (sendmessage "Рогалик -> Сложная" ?newConf)))
 (defrule rule37
 (fact (name "Многопользовательская") (confidence ?c1))
@@ -435,7 +435,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule37*))
-(assert (fact (name "Онлайн")))
+(assert (fact (name "Онлайн") (confidence ?newConf)))
 (assert (sendmessage "Многопользовательская -> Онлайн" ?newConf)))
 (defrule rule39
 (fact (name "Одиночная игра") (confidence ?c1))
@@ -443,7 +443,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule39*))
-(assert (fact (name "Офлайн")))
+(assert (fact (name "Офлайн") (confidence ?newConf)))
 (assert (sendmessage "Одиночная игра -> Офлайн" ?newConf)))
 (defrule rule41
 (fact (name "MOBA") (confidence ?c1))
@@ -452,7 +452,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule41*))
-(assert (fact (name "Соревновательный")))
+(assert (fact (name "Соревновательный") (confidence ?newConf)))
 (assert (sendmessage "MOBA, Многопользовательская -> Соревновательный" ?newConf)))
 (defrule rule43
 (fact (name "Ретро") (confidence ?c1))
@@ -460,7 +460,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule43*))
-(assert (fact (name "Пиксельная графика")))
+(assert (fact (name "Пиксельная графика") (confidence ?newConf)))
 (assert (sendmessage "Ретро -> Пиксельная графика" ?newConf)))
 (defrule rule45
 (fact (name "Воксельная графика") (confidence ?c1))
@@ -468,7 +468,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule45*))
-(assert (fact (name "3D")))
+(assert (fact (name "3D") (confidence ?newConf)))
 (assert (sendmessage "Воксельная графика -> 3D" ?newConf)))
 (defrule rule47
 (fact (name "Стелс") (confidence ?c1))
@@ -476,7 +476,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule47*))
-(assert (fact (name "Исследование")))
+(assert (fact (name "Исследование") (confidence ?newConf)))
 (assert (sendmessage "Стелс -> Исследование" ?newConf)))
 (defrule rule49
 (fact (name "Исследование") (confidence ?c1))
@@ -484,7 +484,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule49*))
-(assert (fact (name "Сюжетная")))
+(assert (fact (name "Сюжетная") (confidence ?newConf)))
 (assert (sendmessage "Исследование -> Сюжетная" ?newConf)))
 (defrule rule51
 (fact (name "Сюжетная") (confidence ?c1))
@@ -493,7 +493,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule51*))
-(assert (fact (name "Затягивающая")))
+(assert (fact (name "Затягивающая") (confidence ?newConf)))
 (assert (sendmessage "Сюжетная, Инди -> Затягивающая" ?newConf)))
 (defrule rule53
 (fact (name "Хоррор на выживание") (confidence ?c1))
@@ -502,7 +502,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule53*))
-(assert (fact (name "Ужасы")))
+(assert (fact (name "Ужасы") (confidence ?newConf)))
 (assert (sendmessage "Хоррор на выживание, Сложная -> Ужасы" ?newConf)))
 (defrule rule55
 (fact (name "Кооператив") (confidence ?c1))
@@ -511,7 +511,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule55*))
-(assert (fact (name "3D")))
+(assert (fact (name "3D") (confidence ?newConf)))
 (assert (sendmessage "Кооператив, Хоррор на выживание -> 3D" ?newConf)))
 (defrule rule57
 (fact (name "Хоррор на выживание") (confidence ?c1))
@@ -519,7 +519,7 @@
 =>
 (bind ?minConf (min ?c1))
 (bind ?newConf (* ?minConf ?*confidence-rule57*))
-(assert (fact (name "Выживание")))
+(assert (fact (name "Выживание") (confidence ?newConf)))
 (assert (sendmessage "Хоррор на выживание -> Выживание" ?newConf)))
 (defrule rule62
 (fact (name "Шутер") (confidence ?c1))
@@ -530,7 +530,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule62*))
-(assert (fact (name "Battlefield")))
+(assert (fact (name "Battlefield") (confidence ?newConf)))
 (assert (sendmessage "Шутер, Разрушаемость, 3D, Онлайн -> Battlefield" ?newConf)))
 (defrule rule64
 (fact (name "Battlefield") (confidence ?c1))
@@ -539,7 +539,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule64*))
-(assert (fact (name "Battlefield 2042")))
+(assert (fact (name "Battlefield 2042") (confidence ?newConf)))
 (assert (sendmessage "Battlefield, Плохая -> Battlefield 2042" ?newConf)))
 (defrule rule66
 (fact (name "Battlefield") (confidence ?c1))
@@ -548,7 +548,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule66*))
-(assert (fact (name "Battlefield 1")))
+(assert (fact (name "Battlefield 1") (confidence ?newConf)))
 (assert (sendmessage "Battlefield, Исторический -> Battlefield 1" ?newConf)))
 (defrule rule68
 (fact (name "3D") (confidence ?c1))
@@ -558,7 +558,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule68*))
-(assert (fact (name "Lethal Company")))
+(assert (fact (name "Lethal Company") (confidence ?newConf)))
 (assert (sendmessage "3D, Онлайн, Хоррор на выживание -> Lethal Company" ?newConf)))
 (defrule rule70
 (fact (name "Сюжетная") (confidence ?c1))
@@ -569,7 +569,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule70*))
-(assert (fact (name "Stanley Parable")))
+(assert (fact (name "Stanley Parable") (confidence ?newConf)))
 (assert (sendmessage "Сюжетная, Офлайн, 3D, Головоломка -> Stanley Parable" ?newConf)))
 (defrule rule72
 (fact (name "Классовый шутер") (confidence ?c1))
@@ -580,7 +580,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule72*))
-(assert (fact (name "Team Fortress 2")))
+(assert (fact (name "Team Fortress 2") (confidence ?newConf)))
 (assert (sendmessage "Классовый шутер, 3D, Онлайн, Классика -> Team Fortress 2" ?newConf)))
 (defrule rule74
 (fact (name "Классовый шутер") (confidence ?c1))
@@ -591,7 +591,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule74*))
-(assert (fact (name "Overwatch")))
+(assert (fact (name "Overwatch") (confidence ?newConf)))
 (assert (sendmessage "Классовый шутер, 3D, Онлайн, Плохая -> Overwatch" ?newConf)))
 (defrule rule76
 (fact (name "Шутер") (confidence ?c1))
@@ -602,7 +602,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule76*))
-(assert (fact (name "Counter Strike")))
+(assert (fact (name "Counter Strike") (confidence ?newConf)))
 (assert (sendmessage "Шутер, 3D, Онлайн, Соревновательный -> Counter Strike" ?newConf)))
 (defrule rule78
 (fact (name "Counter Strike") (confidence ?c1))
@@ -611,7 +611,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule78*))
-(assert (fact (name "Counter Strike 1.6")))
+(assert (fact (name "Counter Strike 1.6") (confidence ?newConf)))
 (assert (sendmessage "Counter Strike, Старая -> Counter Strike 1.6" ?newConf)))
 (defrule rule80
 (fact (name "Counter Strike") (confidence ?c1))
@@ -620,7 +620,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule80*))
-(assert (fact (name "Counter Strike 2")))
+(assert (fact (name "Counter Strike 2") (confidence ?newConf)))
 (assert (sendmessage "Counter Strike, Новая -> Counter Strike 2" ?newConf)))
 (defrule rule82
 (fact (name "RPG") (confidence ?c1))
@@ -631,7 +631,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule82*))
-(assert (fact (name "Stardew Valley")))
+(assert (fact (name "Stardew Valley") (confidence ?newConf)))
 (assert (sendmessage "RPG, Казуальная, Вид сверху, Инди -> Stardew Valley" ?newConf)))
 (defrule rule84
 (fact (name "Песочница") (confidence ?c1))
@@ -641,7 +641,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule84*))
-(assert (fact (name "Minecraft")))
+(assert (fact (name "Minecraft") (confidence ?newConf)))
 (assert (sendmessage "Песочница, 3D, Управление ресурсами -> Minecraft" ?newConf)))
 (defrule rule86
 (fact (name "Песочница") (confidence ?c1))
@@ -652,7 +652,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule86*))
-(assert (fact (name "Terraria")))
+(assert (fact (name "Terraria") (confidence ?newConf)))
 (assert (sendmessage "Песочница, 2D, RPG, Управление ресурсами -> Terraria" ?newConf)))
 (defrule rule88
 (fact (name "Платформер") (confidence ?c1))
@@ -663,7 +663,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule88*))
-(assert (fact (name "Cuphead")))
+(assert (fact (name "Cuphead") (confidence ?newConf)))
 (assert (sendmessage "Платформер, Вид сбоку, Сложная, Офлайн -> Cuphead" ?newConf)))
 (defrule rule90
 (fact (name "Выживание") (confidence ?c1))
@@ -673,7 +673,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule90*))
-(assert (fact (name "The Long Dark")))
+(assert (fact (name "The Long Dark") (confidence ?newConf)))
 (assert (sendmessage "Выживание, 3D, Управление ресурсами -> The Long Dark" ?newConf)))
 (defrule rule92
 (fact (name "Классика") (confidence ?c1))
@@ -684,7 +684,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule92*))
-(assert (fact (name "Chronoheart")))
+(assert (fact (name "Chronoheart") (confidence ?newConf)))
 (assert (sendmessage "Классика, Вид сбоку, Ритм-игра, Сложная -> Chronoheart" ?newConf)))
 (defrule rule94
 (fact (name "Стратегия") (confidence ?c1))
@@ -694,7 +694,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule94*))
-(assert (fact (name "Civilization")))
+(assert (fact (name "Civilization") (confidence ?newConf)))
 (assert (sendmessage "Стратегия, Пошаговая, Исторический -> Civilization" ?newConf)))
 (defrule rule96
 (fact (name "Стратегия") (confidence ?c1))
@@ -704,7 +704,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule96*))
-(assert (fact (name "Hearts of Iron")))
+(assert (fact (name "Hearts of Iron") (confidence ?newConf)))
 (assert (sendmessage "Стратегия, В реальном времени, Исторический -> Hearts of Iron" ?newConf)))
 (defrule rule98
 (fact (name "Стратегия") (confidence ?c1))
@@ -714,7 +714,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule98*))
-(assert (fact (name "XCOM")))
+(assert (fact (name "XCOM") (confidence ?newConf)))
 (assert (sendmessage "Стратегия, Пошаговая, Фантастика -> XCOM" ?newConf)))
 (defrule rule100
 (fact (name "Стратегия") (confidence ?c1))
@@ -724,7 +724,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule100*))
-(assert (fact (name "Heroes of Might and Magic")))
+(assert (fact (name "Heroes of Might and Magic") (confidence ?newConf)))
 (assert (sendmessage "Стратегия, Классика, Старая -> Heroes of Might and Magic" ?newConf)))
 (defrule rule102
 (fact (name "Стратегия") (confidence ?c1))
@@ -734,7 +734,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule102*))
-(assert (fact (name "Starcraft")))
+(assert (fact (name "Starcraft") (confidence ?newConf)))
 (assert (sendmessage "Стратегия, Соревновательный, В реальном времени -> Starcraft" ?newConf)))
 (defrule rule104
 (fact (name "3D") (confidence ?c1))
@@ -746,7 +746,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4 ?c5))
 (bind ?newConf (* ?minConf ?*confidence-rule104*))
-(assert (fact (name "Skyrim")))
+(assert (fact (name "Skyrim") (confidence ?newConf)))
 (assert (sendmessage "3D, RPG, Фэнтези, Сюжетная, Офлайн -> Skyrim" ?newConf)))
 (defrule rule106
 (fact (name "Управление ресурсами") (confidence ?c1))
@@ -757,7 +757,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule106*))
-(assert (fact (name "Factorio")))
+(assert (fact (name "Factorio") (confidence ?newConf)))
 (assert (sendmessage "Управление ресурсами, Вид сверху, Сложная, Фантастика -> Factorio" ?newConf)))
 (defrule rule108
 (fact (name "Ритм-игра") (confidence ?c1))
@@ -767,7 +767,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule108*))
-(assert (fact (name "OSU")))
+(assert (fact (name "OSU") (confidence ?newConf)))
 (assert (sendmessage "Ритм-игра, Сложная, Бесплатная -> OSU" ?newConf)))
 (defrule rule110
 (fact (name "Экшен-RPG") (confidence ?c1))
@@ -777,7 +777,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule110*))
-(assert (fact (name "Ghost of Tsushima")))
+(assert (fact (name "Ghost of Tsushima") (confidence ?newConf)))
 (assert (sendmessage "Экшен-RPG, 3D, Сюжетная -> Ghost of Tsushima" ?newConf)))
 (defrule rule112
 (fact (name "Рогалик") (confidence ?c1))
@@ -787,7 +787,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule112*))
-(assert (fact (name "Darkest Dungeon")))
+(assert (fact (name "Darkest Dungeon") (confidence ?newConf)))
 (assert (sendmessage "Рогалик, Вид сбоку, Сложная -> Darkest Dungeon" ?newConf)))
 (defrule rule114
 (fact (name "Затягивающая") (confidence ?c1))
@@ -796,7 +796,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2))
 (bind ?newConf (* ?minConf ?*confidence-rule114*))
-(assert (fact (name "Fortnite")))
+(assert (fact (name "Fortnite") (confidence ?newConf)))
 (assert (sendmessage "Затягивающая, Бесплатные дополнения -> Fortnite" ?newConf)))
 (defrule rule116
 (fact (name "Фэнтези") (confidence ?c1))
@@ -806,7 +806,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule116*))
-(assert (fact (name "Baldur's Gate 3")))
+(assert (fact (name "Baldur's Gate 3") (confidence ?newConf)))
 (assert (sendmessage "Фэнтези, Пошаговая, RPG -> Baldur's Gate 3" ?newConf)))
 (defrule rule118
 (fact (name "MOBA") (confidence ?c1))
@@ -816,7 +816,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule118*))
-(assert (fact (name "League of Legends")))
+(assert (fact (name "League of Legends") (confidence ?newConf)))
 (assert (sendmessage "MOBA, Онлайн, Соревновательный -> League of Legends" ?newConf)))
 (defrule rule120
 (fact (name "Стратегия") (confidence ?c1))
@@ -826,7 +826,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule120*))
-(assert (fact (name "Heroes of Might and Magic")))
+(assert (fact (name "Heroes of Might and Magic") (confidence ?newConf)))
 (assert (sendmessage "Стратегия, Фэнтези, Пошаговая -> Heroes of Might and Magic" ?newConf)))
 (defrule rule122
 (fact (name "Одиночная игра") (confidence ?c1))
@@ -836,7 +836,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule122*))
-(assert (fact (name "The Witcher 3")))
+(assert (fact (name "The Witcher 3") (confidence ?newConf)))
 (assert (sendmessage "Одиночная игра, Фэнтези, RPG -> The Witcher 3" ?newConf)))
 (defrule rule124
 (fact (name "Симулятор") (confidence ?c1))
@@ -846,7 +846,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule124*))
-(assert (fact (name "The Sims 4")))
+(assert (fact (name "The Sims 4") (confidence ?newConf)))
 (assert (sendmessage "Симулятор, Затягивающая, Постройка базы -> The Sims 4" ?newConf)))
 (defrule rule126
 (fact (name "Экшен-RPG") (confidence ?c1))
@@ -856,7 +856,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule126*))
-(assert (fact (name "Cyberpunk 2077")))
+(assert (fact (name "Cyberpunk 2077") (confidence ?newConf)))
 (assert (sendmessage "Экшен-RPG, Реалистичная графика, 3D -> Cyberpunk 2077" ?newConf)))
 (defrule rule128
 (fact (name "Крафт") (confidence ?c1))
@@ -866,7 +866,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule128*))
-(assert (fact (name "Minecraft")))
+(assert (fact (name "Minecraft") (confidence ?newConf)))
 (assert (sendmessage "Крафт, Постройка базы, Затягивающая -> Minecraft" ?newConf)))
 (defrule rule130
 (fact (name "Постройка базы") (confidence ?c1))
@@ -876,7 +876,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule130*))
-(assert (fact (name "Fallout Shelter")))
+(assert (fact (name "Fallout Shelter") (confidence ?newConf)))
 (assert (sendmessage "Постройка базы, Симулятор, Онлайн -> Fallout Shelter" ?newConf)))
 (defrule rule132
 (fact (name "MOBA") (confidence ?c1))
@@ -886,7 +886,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule132*))
-(assert (fact (name "Apex Legends")))
+(assert (fact (name "Apex Legends") (confidence ?newConf)))
 (assert (sendmessage "MOBA, Реалистичная графика, Соревновательный -> Apex Legends" ?newConf)))
 (defrule rule134
 (fact (name "Сложная") (confidence ?c1))
@@ -897,7 +897,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3 ?c4))
 (bind ?newConf (* ?minConf ?*confidence-rule134*))
-(assert (fact (name "Hollow Knight")))
+(assert (fact (name "Hollow Knight") (confidence ?newConf)))
 (assert (sendmessage "Сложная, Сложная, Платформер, Офлайн -> Hollow Knight" ?newConf)))
 (defrule rule136
 (fact (name "3D") (confidence ?c1))
@@ -907,7 +907,7 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule136*))
-(assert (fact (name "Dark Souls")))
+(assert (fact (name "Dark Souls") (confidence ?newConf)))
 (assert (sendmessage "3D, Вид от 3-го лица, Сложная -> Dark Souls" ?newConf)))
 (defrule rule138
 (fact (name "Онлайн") (confidence ?c1))
@@ -917,5 +917,5 @@
 =>
 (bind ?minConf (min ?c1 ?c2 ?c3))
 (bind ?newConf (* ?minConf ?*confidence-rule138*))
-(assert (fact (name "Among Us")))
+(assert (fact (name "Among Us") (confidence ?newConf)))
 (assert (sendmessage "Онлайн, Детективная, Вид сверху -> Among Us" ?newConf)))
